@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "products": "商品",
+    "sellers": "出店者",
+    "cart": "カート",
+    "dashboard": "ダッシュボード",
+    "login": "ログイン",
+    "signup": "新規登録",
+    "logout": "ログアウト",
+    "sellOnAsiami": "Asiamiで販売"
+  },
+  "hero": {
+    "tagline": "日本のアジア市場",
+    "subtitle": "アジア系オーナーのお店で、本物のアジアの味・文化・商品を日本で見つけよう。",
+    "shopNow": "今すぐショッピング",
+    "startSelling": "販売を始める"
+  },
+  "trust": {
+    "banner": "🎉 ローンチ期間中、全出店者の手数料は0%です",
+    "communityVerified": "コミュニティ認証済み",
+    "verifiedSellers": "認証済み出店者",
+    "safePayments": "安全な決済",
+    "fastDelivery": "迅速な配達"
+  },
+  "categories": {
+    "title": "カテゴリーから探す",
+    "food_grocery": "食品・食材",
+    "snacks": "スナック",
+    "cultural_items": "文化アイテム",
+    "restaurant": "レストラン",
+    "fashion": "ファッション",
+    "beauty": "ビューティー"
+  },
+  "sellers": {
+    "featured": "注目の出店者",
+    "viewAll": "すべての出店者を見る",
+    "viewStore": "ストアを見る",
+    "owner": "オーナー",
+    "rating": "評価",
+    "products": "商品",
+    "communityVerified": "コミュニティ認証済み"
+  },
+  "products": {
+    "addToCart": "カートに追加",
+    "outOfStock": "在庫切れ",
+    "viewDetails": "詳細を見る",
+    "soldBy": "販売者",
+    "moreFromSeller": "この出店者の他の商品",
+    "translate": "翻訳",
+    "price": "価格",
+    "quantity": "数量",
+    "stock": "在庫あり",
+    "category": "カテゴリー",
+    "search": "商品を検索...",
+    "filter": "フィルター",
+    "noResults": "商品が見つかりません"
+  },
+  "cart": {
+    "title": "カート",
+    "empty": "カートは空です",
+    "total": "合計",
+    "checkout": "注文手続きへ",
+    "remove": "削除",
+    "continueShopping": "ショッピングを続ける"
+  },
+  "checkout": {
+    "title": "注文手続き",
+    "delivery": "配達住所",
+    "payment": "支払い方法",
+    "stripe": "クレジット / デビットカード",
+    "paypay": "PayPay（近日対応）",
+    "cod": "代金引換",
+    "placeOrder": "注文を確定する",
+    "orderConfirmed": "ご注文確定！",
+    "orderNumber": "注文番号"
+  },
+  "howItWorks": {
+    "title": "使い方",
+    "buyers": "購入者の方へ",
+    "sellers": "出店者の方へ",
+    "buyerStep1": "探して発見",
+    "buyerStep1Desc": "認証済み出店者から本物のアジアの商品を探そう",
+    "buyerStep2": "カートに追加",
+    "buyerStep2Desc": "商品を選び、お好みの支払い方法を選択",
+    "buyerStep3": "受け取って楽しむ",
+    "buyerStep3Desc": "アジア全土の商品を素早くお届け",
+    "sellerStep1": "ストアを登録",
+    "sellerStep1Desc": "コミュニティ認証付きの出店者プロフィールを作成",
+    "sellerStep2": "商品を登録",
+    "sellerStep2Desc": "写真と多言語説明で商品を出品",
+    "sellerStep3": "収益を得る",
+    "sellerStep3Desc": "手数料0%で注文を受け、ビジネスを成長させよう"
+  },
+  "dashboard": {
+    "orders": "注文",
+    "earnings": "収益",
+    "products": "商品",
+    "buyers": "購入者",
+    "sellers": "出店者",
+    "totalGMV": "総取引額",
+    "pendingApprovals": "承認待ち",
+    "recentOrders": "最近の注文",
+    "thisMonth": "今月"
+  },
+  "order": {
+    "status": {
+      "pending": "保留中",
+      "confirmed": "確定",
+      "shipped": "発送済み",
+      "delivered": "配達完了",
+      "cancelled": "キャンセル"
+    },
+    "markShipped": "発送済みにする",
+    "trackingNumber": "追跡番号",
+    "viewOrder": "注文を見る"
+  },
+  "auth": {
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "confirmPassword": "パスワード確認",
+    "login": "ログイン",
+    "signup": "アカウント作成",
+    "forgotPassword": "パスワードを忘れた方",
+    "noAccount": "アカウントをお持ちでない方",
+    "hasAccount": "すでにアカウントをお持ちの方"
+  },
+  "seller": {
+    "register": "出店者になる",
+    "step1": "基本情報",
+    "step2": "ストア設定",
+    "step3": "支払い設定",
+    "step4": "最初の商品",
+    "nationality": "国籍",
+    "businessType": "事業形態",
+    "storeName": "ストア名",
+    "storeDescription": "ストア説明",
+    "communityBadge": "コミュニティバッジ",
+    "pendingApproval": "承認待ち",
+    "approved": "承認済み",
+    "rejected": "否認"
+  },
+  "footer": {
+    "tagline": "日本のアジアコミュニティマーケット",
+    "aboutUs": "会社概要",
+    "forSellers": "出店者の方へ",
+    "forBuyers": "購入者の方へ",
+    "contact": "お問い合わせ",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "language": "言語",
+    "copyright": "© 2024 Asiami. コミュニティファーストのマーケット。"
+  }
+}

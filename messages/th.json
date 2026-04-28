@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "หน้าแรก",
+    "products": "สินค้า",
+    "sellers": "ผู้ขาย",
+    "cart": "ตะกร้า",
+    "dashboard": "แดชบอร์ด",
+    "login": "เข้าสู่ระบบ",
+    "signup": "สมัครสมาชิก",
+    "logout": "ออกจากระบบ",
+    "sellOnAsiami": "ขายบน Asiami"
+  },
+  "hero": {
+    "tagline": "ตลาดเอเชียในญี่ปุ่น",
+    "subtitle": "เชื่อมต่อกับธุรกิจที่เป็นของชาวเอเชียและค้นพบสินค้าแท้จากทั่วเอเชียในญี่ปุ่น",
+    "shopNow": "ช้อปเลย",
+    "startSelling": "เริ่มขาย"
+  },
+  "trust": {
+    "banner": "🎉 Asiami ฟรีสำหรับผู้ขายทุกคนในช่วงเปิดตัว — ค่าคอมมิชชัน 0%",
+    "communityVerified": "ได้รับการยืนยันจากชุมชน",
+    "verifiedSellers": "ผู้ขายที่ได้รับการยืนยัน",
+    "safePayments": "การชำระเงินที่ปลอดภัย",
+    "fastDelivery": "จัดส่งรวดเร็ว"
+  },
+  "categories": {
+    "title": "ช้อปตามหมวดหมู่",
+    "food_grocery": "อาหารและของชำ",
+    "snacks": "ขนมขบเคี้ยว",
+    "cultural_items": "สินค้าวัฒนธรรม",
+    "restaurant": "ร้านอาหาร",
+    "fashion": "แฟชั่น",
+    "beauty": "ความงาม"
+  },
+  "sellers": {
+    "featured": "ผู้ขายเด่น",
+    "viewAll": "ดูผู้ขายทั้งหมด",
+    "viewStore": "ดูร้าน",
+    "owner": "เจ้าของ",
+    "rating": "คะแนน",
+    "products": "สินค้า",
+    "communityVerified": "ได้รับการยืนยันจากชุมชน"
+  },
+  "products": {
+    "addToCart": "เพิ่มในตะกร้า",
+    "outOfStock": "สินค้าหมด",
+    "viewDetails": "ดูรายละเอียด",
+    "soldBy": "ขายโดย",
+    "moreFromSeller": "สินค้าอื่นจากผู้ขายนี้",
+    "translate": "แปลภาษา",
+    "price": "ราคา",
+    "quantity": "จำนวน",
+    "stock": "มีสินค้า",
+    "category": "หมวดหมู่",
+    "search": "ค้นหาสินค้า...",
+    "filter": "กรอง",
+    "noResults": "ไม่พบสินค้า"
+  },
+  "cart": {
+    "title": "ตะกร้าของคุณ",
+    "empty": "ตะกร้าว่างเปล่า",
+    "total": "รวมทั้งหมด",
+    "checkout": "ดำเนินการชำระเงิน",
+    "remove": "ลบ",
+    "continueShopping": "ช้อปต่อ"
+  },
+  "checkout": {
+    "title": "ชำระเงิน",
+    "delivery": "ที่อยู่จัดส่ง",
+    "payment": "วิธีชำระเงิน",
+    "stripe": "บัตรเครดิต / เดบิต",
+    "paypay": "PayPay (เร็วๆ นี้)",
+    "cod": "เก็บเงินปลายทาง",
+    "placeOrder": "สั่งซื้อ",
+    "orderConfirmed": "ยืนยันคำสั่งซื้อแล้ว!",
+    "orderNumber": "หมายเลขคำสั่งซื้อ"
+  },
+  "howItWorks": {
+    "title": "วิธีการใช้งาน",
+    "buyers": "สำหรับผู้ซื้อ",
+    "sellers": "สำหรับผู้ขาย",
+    "buyerStep1": "เรียกดูและค้นพบ",
+    "buyerStep1Desc": "สำรวจสินค้าเอเชียแท้จากผู้ขายที่ได้รับการยืนยัน",
+    "buyerStep2": "เพิ่มในตะกร้า",
+    "buyerStep2Desc": "เลือกสินค้าและวิธีชำระเงินที่ต้องการ",
+    "buyerStep3": "รับและเพลิดเพลิน",
+    "buyerStep3Desc": "จัดส่งรวดเร็วและเพลิดเพลินกับสินค้าจากทั่วเอเชีย",
+    "sellerStep1": "ลงทะเบียนร้านค้า",
+    "sellerStep1Desc": "สมัครและตั้งค่าโปรไฟล์ผู้ขายที่ได้รับการยืนยันจากชุมชน",
+    "sellerStep2": "ลงสินค้า",
+    "sellerStep2Desc": "อัปโหลดสินค้าพร้อมรูปภาพและคำอธิบายหลายภาษา",
+    "sellerStep3": "เริ่มรับเงิน",
+    "sellerStep3Desc": "รับคำสั่งซื้อและพัฒนาธุรกิจด้วยค่าคอมมิชชัน 0%"
+  },
+  "dashboard": {
+    "orders": "คำสั่งซื้อ",
+    "earnings": "รายได้",
+    "products": "สินค้า",
+    "buyers": "ผู้ซื้อ",
+    "sellers": "ผู้ขาย",
+    "totalGMV": "ยอด GMV รวม",
+    "pendingApprovals": "รอการอนุมัติ",
+    "recentOrders": "คำสั่งซื้อล่าสุด",
+    "thisMonth": "เดือนนี้"
+  },
+  "order": {
+    "status": {
+      "pending": "รอดำเนินการ",
+      "confirmed": "ยืนยันแล้ว",
+      "shipped": "จัดส่งแล้ว",
+      "delivered": "ส่งถึงแล้ว",
+      "cancelled": "ยกเลิกแล้ว"
+    },
+    "markShipped": "ทำเครื่องหมายว่าจัดส่งแล้ว",
+    "trackingNumber": "หมายเลขติดตาม",
+    "viewOrder": "ดูคำสั่งซื้อ"
+  },
+  "auth": {
+    "email": "อีเมล",
+    "password": "รหัสผ่าน",
+    "confirmPassword": "ยืนยันรหัสผ่าน",
+    "login": "เข้าสู่ระบบ",
+    "signup": "สร้างบัญชี",
+    "forgotPassword": "ลืมรหัสผ่าน?",
+    "noAccount": "ยังไม่มีบัญชี?",
+    "hasAccount": "มีบัญชีอยู่แล้ว?"
+  },
+  "seller": {
+    "register": "เป็นผู้ขาย",
+    "step1": "ข้อมูลพื้นฐาน",
+    "step2": "ตั้งค่าร้าน",
+    "step3": "ตั้งค่าการชำระเงิน",
+    "step4": "สินค้าแรก",
+    "nationality": "สัญชาติ",
+    "businessType": "ประเภทธุรกิจ",
+    "storeName": "ชื่อร้าน",
+    "storeDescription": "คำอธิบายร้าน",
+    "communityBadge": "เข็มกลัดชุมชน",
+    "pendingApproval": "รอการอนุมัติ",
+    "approved": "อนุมัติแล้ว",
+    "rejected": "ถูกปฏิเสธ"
+  },
+  "footer": {
+    "tagline": "ตลาดชุมชนเอเชียในญี่ปุ่น",
+    "aboutUs": "เกี่ยวกับเรา",
+    "forSellers": "สำหรับผู้ขาย",
+    "forBuyers": "สำหรับผู้ซื้อ",
+    "contact": "ติดต่อ",
+    "terms": "เงื่อนไขการใช้บริการ",
+    "privacy": "นโยบายความเป็นส่วนตัว",
+    "language": "ภาษา",
+    "copyright": "© 2024 Asiami. ตลาดที่เน้นชุมชนเป็นหลัก"
+  }
+}

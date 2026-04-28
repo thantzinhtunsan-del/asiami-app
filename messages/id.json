@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "products": "Produk",
+    "sellers": "Penjual",
+    "cart": "Keranjang",
+    "dashboard": "Dasbor",
+    "login": "Masuk",
+    "signup": "Daftar",
+    "logout": "Keluar",
+    "sellOnAsiami": "Jual di Asiami"
+  },
+  "hero": {
+    "tagline": "Pasar Asia di Jepang",
+    "subtitle": "Terhubung dengan bisnis milik Asia dan temukan produk autentik dari seluruh Asia di Jepang.",
+    "shopNow": "Belanja Sekarang",
+    "startSelling": "Mulai Berjualan"
+  },
+  "trust": {
+    "banner": "🎉 Asiami GRATIS untuk semua penjual selama fase peluncuran — 0% komisi",
+    "communityVerified": "Terverifikasi Komunitas",
+    "verifiedSellers": "Penjual Terverifikasi",
+    "safePayments": "Pembayaran Aman",
+    "fastDelivery": "Pengiriman Cepat"
+  },
+  "categories": {
+    "title": "Belanja Berdasarkan Kategori",
+    "food_grocery": "Makanan & Sembako",
+    "snacks": "Camilan",
+    "cultural_items": "Item Budaya",
+    "restaurant": "Restoran",
+    "fashion": "Fashion",
+    "beauty": "Kecantikan"
+  },
+  "sellers": {
+    "featured": "Penjual Unggulan",
+    "viewAll": "Lihat Semua Penjual",
+    "viewStore": "Lihat Toko",
+    "owner": "Pemilik",
+    "rating": "Rating",
+    "products": "Produk",
+    "communityVerified": "Terverifikasi Komunitas"
+  },
+  "products": {
+    "addToCart": "Tambah ke Keranjang",
+    "outOfStock": "Stok Habis",
+    "viewDetails": "Lihat Detail",
+    "soldBy": "Dijual oleh",
+    "moreFromSeller": "Lainnya dari penjual ini",
+    "translate": "Terjemahkan",
+    "price": "Harga",
+    "quantity": "Jumlah",
+    "stock": "Tersedia",
+    "category": "Kategori",
+    "search": "Cari produk...",
+    "filter": "Filter",
+    "noResults": "Tidak ada produk ditemukan"
+  },
+  "cart": {
+    "title": "Keranjang Belanja",
+    "empty": "Keranjang belanja kosong",
+    "total": "Total",
+    "checkout": "Lanjut ke Pembayaran",
+    "remove": "Hapus",
+    "continueShopping": "Lanjut Belanja"
+  },
+  "checkout": {
+    "title": "Pembayaran",
+    "delivery": "Alamat Pengiriman",
+    "payment": "Metode Pembayaran",
+    "stripe": "Kartu Kredit / Debit",
+    "paypay": "PayPay (segera hadir)",
+    "cod": "Bayar di Tempat",
+    "placeOrder": "Pesan Sekarang",
+    "orderConfirmed": "Pesanan Dikonfirmasi!",
+    "orderNumber": "Nomor Pesanan"
+  },
+  "howItWorks": {
+    "title": "Cara Kerja",
+    "buyers": "Untuk Pembeli",
+    "sellers": "Untuk Penjual",
+    "buyerStep1": "Jelajahi & Temukan",
+    "buyerStep1Desc": "Temukan produk Asia autentik dari penjual komunitas terverifikasi",
+    "buyerStep2": "Tambah ke Keranjang",
+    "buyerStep2Desc": "Pilih item dan metode pembayaran yang diinginkan",
+    "buyerStep3": "Terima & Nikmati",
+    "buyerStep3Desc": "Pengiriman cepat dan nikmati produk dari seluruh Asia",
+    "sellerStep1": "Daftarkan Toko",
+    "sellerStep1Desc": "Daftar dan buat profil penjual terverifikasi komunitas",
+    "sellerStep2": "Daftarkan Produk",
+    "sellerStep2Desc": "Upload produk dengan foto dan deskripsi multibahasa",
+    "sellerStep3": "Mulai Menghasilkan",
+    "sellerStep3Desc": "Terima pesanan dan kembangkan bisnis dengan 0% komisi"
+  },
+  "dashboard": {
+    "orders": "Pesanan",
+    "earnings": "Pendapatan",
+    "products": "Produk",
+    "buyers": "Pembeli",
+    "sellers": "Penjual",
+    "totalGMV": "Total GMV",
+    "pendingApprovals": "Persetujuan Tertunda",
+    "recentOrders": "Pesanan Terbaru",
+    "thisMonth": "Bulan Ini"
+  },
+  "order": {
+    "status": {
+      "pending": "Tertunda",
+      "confirmed": "Dikonfirmasi",
+      "shipped": "Dikirim",
+      "delivered": "Terkirim",
+      "cancelled": "Dibatalkan"
+    },
+    "markShipped": "Tandai Sudah Dikirim",
+    "trackingNumber": "Nomor Pelacakan",
+    "viewOrder": "Lihat Pesanan"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Kata Sandi",
+    "confirmPassword": "Konfirmasi Kata Sandi",
+    "login": "Masuk",
+    "signup": "Buat Akun",
+    "forgotPassword": "Lupa Kata Sandi?",
+    "noAccount": "Belum punya akun?",
+    "hasAccount": "Sudah punya akun?"
+  },
+  "seller": {
+    "register": "Jadi Penjual",
+    "step1": "Info Dasar",
+    "step2": "Pengaturan Toko",
+    "step3": "Pengaturan Pembayaran",
+    "step4": "Produk Pertama",
+    "nationality": "Kebangsaan",
+    "businessType": "Jenis Bisnis",
+    "storeName": "Nama Toko",
+    "storeDescription": "Deskripsi Toko",
+    "communityBadge": "Lencana Komunitas",
+    "pendingApproval": "Menunggu Persetujuan",
+    "approved": "Disetujui",
+    "rejected": "Ditolak"
+  },
+  "footer": {
+    "tagline": "Pasar komunitas Asia di Jepang",
+    "aboutUs": "Tentang Kami",
+    "forSellers": "Untuk Penjual",
+    "forBuyers": "Untuk Pembeli",
+    "contact": "Kontak",
+    "terms": "Syarat Layanan",
+    "privacy": "Kebijakan Privasi",
+    "language": "Bahasa",
+    "copyright": "© 2024 Asiami. Pasar yang mengutamakan komunitas."
+  }
+}

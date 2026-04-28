@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "sellers": "Sellers",
+    "cart": "Cart",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout",
+    "sellOnAsiami": "Sell on Asiami"
+  },
+  "hero": {
+    "tagline": "Asia's Market in Japan",
+    "subtitle": "Connect with Asian-owned businesses and discover authentic products from across Asia — right here in Japan.",
+    "shopNow": "Shop Now",
+    "startSelling": "Start Selling"
+  },
+  "trust": {
+    "banner": "🎉 Asiami is FREE for all sellers during launch phase — 0% commission",
+    "communityVerified": "Community Verified",
+    "verifiedSellers": "Verified Sellers",
+    "safePayments": "Safe Payments",
+    "fastDelivery": "Fast Delivery"
+  },
+  "categories": {
+    "title": "Shop by Category",
+    "food_grocery": "Food & Grocery",
+    "snacks": "Snacks",
+    "cultural_items": "Cultural Items",
+    "restaurant": "Restaurant",
+    "fashion": "Fashion",
+    "beauty": "Beauty"
+  },
+  "sellers": {
+    "featured": "Featured Sellers",
+    "viewAll": "View All Sellers",
+    "viewStore": "View Store",
+    "owner": "Owner",
+    "rating": "Rating",
+    "products": "Products",
+    "communityVerified": "Community Verified"
+  },
+  "products": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "viewDetails": "View Details",
+    "soldBy": "Sold by",
+    "moreFromSeller": "More from this seller",
+    "translate": "Translate",
+    "price": "Price",
+    "quantity": "Quantity",
+    "stock": "In Stock",
+    "category": "Category",
+    "search": "Search products...",
+    "filter": "Filter",
+    "noResults": "No products found"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "continueShopping": "Continue Shopping"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "delivery": "Delivery Address",
+    "payment": "Payment Method",
+    "stripe": "Credit / Debit Card",
+    "paypay": "PayPay (coming soon)",
+    "cod": "Cash on Delivery",
+    "placeOrder": "Place Order",
+    "orderConfirmed": "Order Confirmed!",
+    "orderNumber": "Order Number"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "buyers": "For Buyers",
+    "sellers": "For Sellers",
+    "buyerStep1": "Browse & Discover",
+    "buyerStep1Desc": "Explore authentic Asian products from verified community sellers",
+    "buyerStep2": "Add to Cart",
+    "buyerStep2Desc": "Select your items and choose your preferred payment method",
+    "buyerStep3": "Receive & Enjoy",
+    "buyerStep3Desc": "Get fast delivery and enjoy products from across Asia",
+    "sellerStep1": "Register Your Store",
+    "sellerStep1Desc": "Sign up and set up your community-verified seller profile",
+    "sellerStep2": "List Your Products",
+    "sellerStep2Desc": "Upload your products with photos and multilingual descriptions",
+    "sellerStep3": "Start Earning",
+    "sellerStep3Desc": "Receive orders and grow your business with 0% commission"
+  },
+  "dashboard": {
+    "orders": "Orders",
+    "earnings": "Earnings",
+    "products": "Products",
+    "buyers": "Buyers",
+    "sellers": "Sellers",
+    "totalGMV": "Total GMV",
+    "pendingApprovals": "Pending Approvals",
+    "recentOrders": "Recent Orders",
+    "thisMonth": "This Month"
+  },
+  "order": {
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "markShipped": "Mark as Shipped",
+    "trackingNumber": "Tracking Number",
+    "viewOrder": "View Order"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "login": "Log In",
+    "signup": "Create Account",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "seller": {
+    "register": "Become a Seller",
+    "step1": "Basic Info",
+    "step2": "Store Setup",
+    "step3": "Payment Setup",
+    "step4": "First Product",
+    "nationality": "Nationality",
+    "businessType": "Business Type",
+    "storeName": "Store Name",
+    "storeDescription": "Store Description",
+    "communityBadge": "Community Badge",
+    "pendingApproval": "Pending Approval",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "footer": {
+    "tagline": "Asia's community marketplace in Japan",
+    "aboutUs": "About Us",
+    "forSellers": "For Sellers",
+    "forBuyers": "For Buyers",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "language": "Language",
+    "copyright": "© 2024 Asiami. Community-first marketplace."
+  }
+}

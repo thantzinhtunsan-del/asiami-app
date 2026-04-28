@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFF8F0;
+  --foreground: #1A2B4A;
+  --brand-orange: #E8622A;
+  --brand-cream: #FFF8F0;
+  --brand-navy: #1A2B4A;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-brand-cream-dark;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-brand-navy;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-white hover:bg-brand-cream-dark text-brand-navy font-semibold px-6 py-3 rounded-xl border-2 border-brand-cream-dark transition-all duration-200;
+  }
+  .btn-outline {
+    @apply bg-transparent hover:bg-brand-orange text-brand-orange hover:text-white font-semibold px-6 py-3 rounded-xl border-2 border-brand-orange transition-all duration-200;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-brand-cream-dark bg-white focus:outline-none focus:border-brand-orange transition-colors;
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-brand-navy mb-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .warm-shadow {
+    box-shadow: 0 4px 20px rgba(232, 98, 42, 0.12);
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, #1A2B4A 0%, #2C4270 50%, #E8622A 100%);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8622A;
+  border-radius: 3px;
+}

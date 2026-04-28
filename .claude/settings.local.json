@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@14 . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(npx create-next-app@14 asiami-app --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(mv /c/Users/thant/OneDrive/Desktop/Asiami/asiami-app/* /c/Users/thant/OneDrive/Desktop/Asiami/)",
+      "Bash(mv /c/Users/thant/OneDrive/Desktop/Asiami/asiami-app/.* /c/Users/thant/OneDrive/Desktop/Asiami/)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue)",
+      "Bash(python3 -c \"import json,sys; p=json.load\\(sys.stdin\\); print\\('name:', p['name']\\); print\\('next:', p['dependencies'].get\\('next','?'\\)\\)\")",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\('name:', p.name\\); console.log\\('next:', p.dependencies.next\\)\")",
+      "mcp__992367b6-6fc2-493c-976d-14200a94fcf7__list_teams",
+      "mcp__992367b6-6fc2-493c-976d-14200a94fcf7__list_projects"
+    ]
+  }
+}

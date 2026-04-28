@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "商品",
+    "sellers": "卖家",
+    "cart": "购物车",
+    "dashboard": "控制台",
+    "login": "登录",
+    "signup": "注册",
+    "logout": "退出登录",
+    "sellOnAsiami": "在Asiami开店"
+  },
+  "hero": {
+    "tagline": "日本的亚洲集市",
+    "subtitle": "与亚洲裔商家联结，在日本发现来自整个亚洲的正宗商品。",
+    "shopNow": "立即购物",
+    "startSelling": "开始销售"
+  },
+  "trust": {
+    "banner": "🎉 Asiami启动阶段对所有卖家免费开放 — 佣金0%",
+    "communityVerified": "社区认证",
+    "verifiedSellers": "已认证卖家",
+    "safePayments": "安全支付",
+    "fastDelivery": "快速配送"
+  },
+  "categories": {
+    "title": "按类别购物",
+    "food_grocery": "食品和杂货",
+    "snacks": "零食",
+    "cultural_items": "文化用品",
+    "restaurant": "餐厅",
+    "fashion": "时尚",
+    "beauty": "美妆"
+  },
+  "sellers": {
+    "featured": "精选卖家",
+    "viewAll": "查看所有卖家",
+    "viewStore": "查看店铺",
+    "owner": "店主",
+    "rating": "评分",
+    "products": "商品",
+    "communityVerified": "社区认证"
+  },
+  "products": {
+    "addToCart": "加入购物车",
+    "outOfStock": "缺货",
+    "viewDetails": "查看详情",
+    "soldBy": "由...销售",
+    "moreFromSeller": "该卖家的更多商品",
+    "translate": "翻译",
+    "price": "价格",
+    "quantity": "数量",
+    "stock": "有货",
+    "category": "类别",
+    "search": "搜索商品...",
+    "filter": "筛选",
+    "noResults": "未找到商品"
+  },
+  "cart": {
+    "title": "您的购物车",
+    "empty": "购物车为空",
+    "total": "合计",
+    "checkout": "前往结账",
+    "remove": "删除",
+    "continueShopping": "继续购物"
+  },
+  "checkout": {
+    "title": "结账",
+    "delivery": "收货地址",
+    "payment": "支付方式",
+    "stripe": "信用卡/借记卡",
+    "paypay": "PayPay（即将推出）",
+    "cod": "货到付款",
+    "placeOrder": "提交订单",
+    "orderConfirmed": "订单已确认！",
+    "orderNumber": "订单号"
+  },
+  "howItWorks": {
+    "title": "使用方法",
+    "buyers": "买家",
+    "sellers": "卖家",
+    "buyerStep1": "浏览与发现",
+    "buyerStep1Desc": "从经过验证的社区卖家那里探索正宗的亚洲商品",
+    "buyerStep2": "加入购物车",
+    "buyerStep2Desc": "选择您的商品并选择您喜欢的支付方式",
+    "buyerStep3": "收货享受",
+    "buyerStep3Desc": "快速收货，享受来自亚洲各地的商品",
+    "sellerStep1": "注册店铺",
+    "sellerStep1Desc": "注册并设置经社区认证的卖家资料",
+    "sellerStep2": "发布商品",
+    "sellerStep2Desc": "上传带有多语言描述的商品图片",
+    "sellerStep3": "开始赚钱",
+    "sellerStep3Desc": "接收订单，以0%佣金发展您的业务"
+  },
+  "dashboard": {
+    "orders": "订单",
+    "earnings": "收益",
+    "products": "商品",
+    "buyers": "买家",
+    "sellers": "卖家",
+    "totalGMV": "总成交额",
+    "pendingApprovals": "待审批",
+    "recentOrders": "最近订单",
+    "thisMonth": "本月"
+  },
+  "order": {
+    "status": {
+      "pending": "待处理",
+      "confirmed": "已确认",
+      "shipped": "已发货",
+      "delivered": "已送达",
+      "cancelled": "已取消"
+    },
+    "markShipped": "标记为已发货",
+    "trackingNumber": "追踪号",
+    "viewOrder": "查看订单"
+  },
+  "auth": {
+    "email": "电子邮件",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "login": "登录",
+    "signup": "创建账户",
+    "forgotPassword": "忘记密码？",
+    "noAccount": "还没有账户？",
+    "hasAccount": "已有账户？"
+  },
+  "seller": {
+    "register": "成为卖家",
+    "step1": "基本信息",
+    "step2": "店铺设置",
+    "step3": "支付设置",
+    "step4": "第一个商品",
+    "nationality": "国籍",
+    "businessType": "业务类型",
+    "storeName": "店铺名称",
+    "storeDescription": "店铺描述",
+    "communityBadge": "社区徽章",
+    "pendingApproval": "待审批",
+    "approved": "已批准",
+    "rejected": "已拒绝"
+  },
+  "footer": {
+    "tagline": "日本的亚洲社区集市",
+    "aboutUs": "关于我们",
+    "forSellers": "卖家中心",
+    "forBuyers": "买家中心",
+    "contact": "联系我们",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "language": "语言",
+    "copyright": "© 2024 Asiami. 社区优先的集市。"
+  }
+}

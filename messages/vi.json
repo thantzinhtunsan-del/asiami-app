@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "products": "Sản phẩm",
+    "sellers": "Người bán",
+    "cart": "Giỏ hàng",
+    "dashboard": "Bảng điều khiển",
+    "login": "Đăng nhập",
+    "signup": "Đăng ký",
+    "logout": "Đăng xuất",
+    "sellOnAsiami": "Bán hàng trên Asiami"
+  },
+  "hero": {
+    "tagline": "Chợ châu Á tại Nhật Bản",
+    "subtitle": "Kết nối với các doanh nghiệp do người châu Á sở hữu và khám phá sản phẩm chính hãng từ khắp châu Á ngay tại Nhật Bản.",
+    "shopNow": "Mua ngay",
+    "startSelling": "Bắt đầu bán hàng"
+  },
+  "trust": {
+    "banner": "🎉 Asiami MIỄN PHÍ cho tất cả người bán trong giai đoạn ra mắt — 0% hoa hồng",
+    "communityVerified": "Được cộng đồng xác nhận",
+    "verifiedSellers": "Người bán đã xác nhận",
+    "safePayments": "Thanh toán an toàn",
+    "fastDelivery": "Giao hàng nhanh"
+  },
+  "categories": {
+    "title": "Mua sắm theo danh mục",
+    "food_grocery": "Thực phẩm & Tạp hóa",
+    "snacks": "Đồ ăn vặt",
+    "cultural_items": "Đồ văn hóa",
+    "restaurant": "Nhà hàng",
+    "fashion": "Thời trang",
+    "beauty": "Làm đẹp"
+  },
+  "sellers": {
+    "featured": "Người bán nổi bật",
+    "viewAll": "Xem tất cả người bán",
+    "viewStore": "Xem cửa hàng",
+    "owner": "Chủ sở hữu",
+    "rating": "Đánh giá",
+    "products": "Sản phẩm",
+    "communityVerified": "Được cộng đồng xác nhận"
+  },
+  "products": {
+    "addToCart": "Thêm vào giỏ hàng",
+    "outOfStock": "Hết hàng",
+    "viewDetails": "Xem chi tiết",
+    "soldBy": "Bán bởi",
+    "moreFromSeller": "Thêm từ người bán này",
+    "translate": "Dịch",
+    "price": "Giá",
+    "quantity": "Số lượng",
+    "stock": "Còn hàng",
+    "category": "Danh mục",
+    "search": "Tìm kiếm sản phẩm...",
+    "filter": "Lọc",
+    "noResults": "Không tìm thấy sản phẩm"
+  },
+  "cart": {
+    "title": "Giỏ hàng của bạn",
+    "empty": "Giỏ hàng trống",
+    "total": "Tổng cộng",
+    "checkout": "Tiến hành thanh toán",
+    "remove": "Xóa",
+    "continueShopping": "Tiếp tục mua sắm"
+  },
+  "checkout": {
+    "title": "Thanh toán",
+    "delivery": "Địa chỉ giao hàng",
+    "payment": "Phương thức thanh toán",
+    "stripe": "Thẻ tín dụng / Ghi nợ",
+    "paypay": "PayPay (sắp có)",
+    "cod": "Tiền mặt khi nhận hàng",
+    "placeOrder": "Đặt hàng",
+    "orderConfirmed": "Đặt hàng thành công!",
+    "orderNumber": "Mã đơn hàng"
+  },
+  "howItWorks": {
+    "title": "Cách hoạt động",
+    "buyers": "Dành cho người mua",
+    "sellers": "Dành cho người bán",
+    "buyerStep1": "Duyệt & Khám phá",
+    "buyerStep1Desc": "Khám phá sản phẩm châu Á chính hãng từ người bán đã xác minh",
+    "buyerStep2": "Thêm vào giỏ hàng",
+    "buyerStep2Desc": "Chọn sản phẩm và phương thức thanh toán yêu thích",
+    "buyerStep3": "Nhận và tận hưởng",
+    "buyerStep3Desc": "Giao hàng nhanh và tận hưởng sản phẩm từ khắp châu Á",
+    "sellerStep1": "Đăng ký cửa hàng",
+    "sellerStep1Desc": "Đăng ký và thiết lập hồ sơ người bán được cộng đồng xác minh",
+    "sellerStep2": "Đăng sản phẩm",
+    "sellerStep2Desc": "Tải sản phẩm với ảnh và mô tả đa ngôn ngữ",
+    "sellerStep3": "Bắt đầu kiếm tiền",
+    "sellerStep3Desc": "Nhận đơn hàng và phát triển kinh doanh với 0% hoa hồng"
+  },
+  "dashboard": {
+    "orders": "Đơn hàng",
+    "earnings": "Thu nhập",
+    "products": "Sản phẩm",
+    "buyers": "Người mua",
+    "sellers": "Người bán",
+    "totalGMV": "Tổng GMV",
+    "pendingApprovals": "Chờ phê duyệt",
+    "recentOrders": "Đơn hàng gần đây",
+    "thisMonth": "Tháng này"
+  },
+  "order": {
+    "status": {
+      "pending": "Đang chờ",
+      "confirmed": "Đã xác nhận",
+      "shipped": "Đã giao",
+      "delivered": "Đã nhận",
+      "cancelled": "Đã hủy"
+    },
+    "markShipped": "Đánh dấu đã giao",
+    "trackingNumber": "Mã theo dõi",
+    "viewOrder": "Xem đơn hàng"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "login": "Đăng nhập",
+    "signup": "Tạo tài khoản",
+    "forgotPassword": "Quên mật khẩu?",
+    "noAccount": "Chưa có tài khoản?",
+    "hasAccount": "Đã có tài khoản?"
+  },
+  "seller": {
+    "register": "Trở thành người bán",
+    "step1": "Thông tin cơ bản",
+    "step2": "Thiết lập cửa hàng",
+    "step3": "Thiết lập thanh toán",
+    "step4": "Sản phẩm đầu tiên",
+    "nationality": "Quốc tịch",
+    "businessType": "Loại hình kinh doanh",
+    "storeName": "Tên cửa hàng",
+    "storeDescription": "Mô tả cửa hàng",
+    "communityBadge": "Huy hiệu cộng đồng",
+    "pendingApproval": "Chờ phê duyệt",
+    "approved": "Đã phê duyệt",
+    "rejected": "Bị từ chối"
+  },
+  "footer": {
+    "tagline": "Chợ cộng đồng châu Á tại Nhật Bản",
+    "aboutUs": "Về chúng tôi",
+    "forSellers": "Dành cho người bán",
+    "forBuyers": "Dành cho người mua",
+    "contact": "Liên hệ",
+    "terms": "Điều khoản dịch vụ",
+    "privacy": "Chính sách bảo mật",
+    "language": "Ngôn ngữ",
+    "copyright": "© 2024 Asiami. Chợ ưu tiên cộng đồng."
+  }
+}
