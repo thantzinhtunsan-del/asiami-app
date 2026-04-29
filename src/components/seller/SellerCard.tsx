@@ -32,18 +32,14 @@ export default function SellerCard({
   return (
     <Link href={`/sellers/${id}`} className="block">
       <div className="card group cursor-pointer hover:-translate-y-1 transition-transform duration-200">
-        {/* Warm gradient banner */}
-        <div className="h-20 bg-gradient-to-r from-brand-navy to-brand-orange relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
-            {['🌸','🍜','🎋','🏮','🌺'].map((emoji, i) => (
-              <span key={i} className="absolute text-2xl" style={{
-                left: `${i * 22 + 5}%`,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                opacity: 0.6
-              }}>{emoji}</span>
-            ))}
-          </div>
+        {/* Store banner */}
+        <div className="h-20 bg-gradient-to-r from-brand-navy to-brand-navy/80 relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            }}
+          />
         </div>
 
         <div className="px-4 pb-4">
