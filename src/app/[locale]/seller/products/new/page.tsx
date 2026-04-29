@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
 import { ImagePlus, ArrowLeft, Check, Banknote, Truck, CreditCard, Info } from 'lucide-react';
 import { CATEGORIES } from '@/lib/utils';
@@ -20,6 +21,7 @@ type FormState = {
 
 export default function NewProductPage() {
   const t = useTranslations('categories');
+  const router = useRouter();
   const [form, setForm] = useState<FormState>({
     title: '',
     description: '',
@@ -31,7 +33,8 @@ export default function NewProductPage() {
     deliveryFeeType: 'buyer_pays',
     deliveryFee: '',
   });
-  const [saved, setSaved] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function field(key: 'title' | 'description' | 'price' | 'category' | 'stock' | 'deliveryFee') {
     return (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -52,10 +55,37 @@ export default function NewProductPage() {
     });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2500);
+    setSubmitError(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: form.title,
+          description: form.description || null,
+          price: Number(form.price),
+          category: form.category,
+          stock: Number(form.stock),
+          images: form.images,
+          payment_options: form.paymentOptions,
+          delivery_fee_type: form.deliveryFeeType,
+          delivery_fee: form.deliveryFeeType === 'buyer_pays' ? Number(form.deliveryFee || 0) : 0,
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setSubmitError(json.error ?? 'Failed to create product. Please try again.');
+        return;
+      }
+      router.push('/seller/products');
+    } catch {
+      setSubmitError('Network error. Please check your connection and try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const deliveryFeeNum = parseInt(form.deliveryFee || '0', 10);
@@ -293,17 +323,22 @@ export default function NewProductPage() {
           </div>
         </div>
 
+        {submitError && (
+          <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+            {submitError}
+          </div>
+        )}
+
         <div className="flex gap-3">
           <Link href="/seller/products" className="btn-secondary flex-1 text-center">
             Cancel
           </Link>
           <button
             type="submit"
-            className={`flex-1 flex items-center justify-center gap-2 ${
-              saved ? 'bg-green-500 text-white rounded-xl py-3 font-semibold' : 'btn-primary'
-            }`}
+            disabled={submitting}
+            className={`flex-1 flex items-center justify-center gap-2 btn-primary disabled:opacity-60 disabled:cursor-not-allowed`}
           >
-            {saved ? <><Check size={18} /> Saved!</> : 'Publish Product'}
+            {submitting ? 'Publishing…' : 'Publish Product'}
           </button>
         </div>
       </form>

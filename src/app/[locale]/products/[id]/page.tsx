@@ -1,72 +1,57 @@
-'use client';
-import { useTranslations } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
-import { useState } from 'react';
-import { ShoppingCart, ChevronLeft, Star, Truck, Shield, Languages, Banknote, CreditCard } from 'lucide-react';
-import { useCartStore } from '@/store/cart';
+import { ChevronLeft, Star, Truck, Shield, Languages, Banknote, CreditCard } from 'lucide-react';
+import { createClient } from '@/lib/supabase/server';
 import { formatPrice } from '@/lib/utils';
 import CommunityBadge from '@/components/ui/CommunityBadge';
 import ProductCard from '@/components/product/ProductCard';
-import type { ProductPaymentOption, DeliveryFeeType } from '@/types/database';
+import ProductAddToCart from '@/components/product/ProductAddToCart';
+import type { ProductWithSeller } from '@/types/database';
 
-// Sample product data — in production fetched from Supabase
-const SAMPLE_PRODUCTS: Record<string, {
-  id: string; title: string; price: number; description: string;
-  images: string[]; sellerName: string; sellerId: string;
-  badgeFlag: string; badgeName: string; stock: number; category: string;
-  paymentOptions: ProductPaymentOption[];
-  deliveryFeeType: DeliveryFeeType;
-  deliveryFee: number;
-}> = {
-  'p1000000-0000-0000-0000-000000000001': {
-    id: 'p1000000-0000-0000-0000-000000000001',
-    title: 'Shrimp Paste (Ngapi)',
-    price: 880,
-    description: 'Traditional Myanmar fermented shrimp paste, essential for authentic Myanmar cooking. This 250g jar of premium ngapi is sourced directly from coastal Myanmar. The rich, umami-packed paste is a cornerstone of Myanmar cuisine — used in everything from mohinga to tea leaf salad dressings. Produced using traditional fermentation methods passed down through generations.',
-    images: [],
-    sellerName: 'Yangon Grocery',
-    sellerId: 's1000000-0000-0000-0000-000000000001',
-    badgeFlag: '🇲🇲',
-    badgeName: 'Myanmar-owned',
-    stock: 50,
-    category: 'food_grocery',
-    paymentOptions: ['prepaid', 'cod'],
-    deliveryFeeType: 'buyer_pays',
-    deliveryFee: 500,
-  },
-};
+interface Props {
+  params: Promise<{ id: string; locale: string }>;
+}
 
-const RELATED = [
-  { id: 'p1000000-0000-0000-0000-000000000002', title: 'Laphet Thoke Mix', price: 1200, category: 'food_grocery', stock: 30, sellerName: 'Yangon Grocery', sellerId: 's1', badgeFlag: '🇲🇲', images: [] },
-  { id: 'p1000000-0000-0000-0000-000000000004', title: 'Sticky Rice Snack Pack', price: 950, category: 'snacks', stock: 80, sellerName: 'Yangon Grocery', sellerId: 's1', badgeFlag: '🇲🇲', images: [] },
-  { id: 'p1000000-0000-0000-0000-000000000003', title: 'Myanmar Thanaka Powder', price: 650, category: 'beauty', stock: 100, sellerName: 'Yangon Grocery', sellerId: 's1', badgeFlag: '🇲🇲', images: [] },
-  { id: 'p1000000-0000-0000-0000-000000000005', title: 'Longyi Fabric — Blue Floral', price: 3200, category: 'fashion', stock: 20, sellerName: 'Yangon Grocery', sellerId: 's1', badgeFlag: '🇲🇲', images: [] },
-];
+export default async function ProductDetailPage({ params }: Props) {
+  const { id } = await params;
+  const t = await getTranslations('products');
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const t = useTranslations('products');
-  const addItem = useCartStore(s => s.addItem);
-  const [qty, setQty] = useState(1);
-  const [added, setAdded] = useState(false);
+  const supabase = await createClient();
 
-  // Fall back to first product for any unknown id
-  const product = SAMPLE_PRODUCTS[params.id] ?? Object.values(SAMPLE_PRODUCTS)[0];
-  const image = product.images[0] ?? `https://picsum.photos/seed/${product.id}/600/600`;
+  const { data: product, error } = await supabase
+    .from('products')
+    .select(`
+      *,
+      seller_profiles (
+        id, store_name, photo_url, approved, user_id,
+        community_badges ( id, name, flag_emoji, color )
+      )
+    `)
+    .eq('id', id)
+    .eq('active', true)
+    .single<ProductWithSeller>();
 
-  function handleAdd() {
-    addItem({
-      productId: product.id,
-      sellerId: product.sellerId,
-      title: product.title,
-      price: product.price,
-      quantity: qty,
-      image,
-      sellerName: product.sellerName,
-    });
-    setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
+  if (error || !product) {
+    notFound();
   }
+
+  const seller = product.seller_profiles;
+  const badge = seller.community_badges;
+  const image = product.images?.[0] ?? `https://picsum.photos/seed/${product.id}/600/600`;
+
+  // Fetch related products from the same seller (up to 4, excluding current)
+  const { data: related } = await supabase
+    .from('products')
+    .select(`
+      id, title, price, images, stock, category,
+      seller_profiles ( id, store_name, community_badges ( flag_emoji ) )
+    `)
+    .eq('seller_id', seller.id)
+    .eq('active', true)
+    .neq('id', product.id)
+    .limit(4);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
@@ -94,9 +79,11 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
         {/* Details */}
         <div>
-          <div className="mb-2">
-            <CommunityBadge flagEmoji={product.badgeFlag} name={product.badgeName} size="sm" />
-          </div>
+          {badge && (
+            <div className="mb-2">
+              <CommunityBadge flagEmoji={badge.flag_emoji} name={badge.name} size="sm" />
+            </div>
+          )}
 
           <h1 className="text-2xl md:text-3xl font-bold text-brand-navy mb-3">{product.title}</h1>
 
@@ -119,44 +106,35 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
           {/* Seller */}
           <Link
-            href={`/sellers/${product.sellerId}`}
+            href={`/sellers/${seller.id}`}
             className="flex items-center gap-3 p-3 bg-brand-cream rounded-xl mb-5 hover:bg-brand-cream-dark transition-colors group"
           >
             <div className="w-10 h-10 bg-brand-orange rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-sm">YG</span>
+              {seller.photo_url ? (
+                <Image src={seller.photo_url} alt={seller.store_name} width={40} height={40} className="rounded-xl object-cover" />
+              ) : (
+                <span className="text-white font-bold text-sm">
+                  {seller.store_name.slice(0, 2).toUpperCase()}
+                </span>
+              )}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-semibold text-brand-navy text-sm group-hover:text-brand-orange transition-colors">{product.sellerName}</p>
-              <p className="text-xs text-brand-navy/50">{t('soldBy')} {product.sellerName}</p>
+              <p className="font-semibold text-brand-navy text-sm group-hover:text-brand-orange transition-colors">{seller.store_name}</p>
+              <p className="text-xs text-brand-navy/50">{t('soldBy')} {seller.store_name}</p>
             </div>
             <span className="text-brand-orange text-xs font-medium">{t('viewStore' as any)} →</span>
           </Link>
 
-          {/* Quantity + Add to cart */}
-          <div className="flex items-center gap-3 mb-5">
-            <div className="flex items-center gap-2 bg-brand-cream rounded-xl p-1">
-              <button
-                onClick={() => setQty(q => Math.max(1, q - 1))}
-                className="w-8 h-8 rounded-lg bg-white text-brand-navy font-bold hover:bg-brand-orange hover:text-white transition-colors"
-              >−</button>
-              <span className="w-8 text-center font-semibold text-brand-navy">{qty}</span>
-              <button
-                onClick={() => setQty(q => Math.min(product.stock, q + 1))}
-                className="w-8 h-8 rounded-lg bg-white text-brand-navy font-bold hover:bg-brand-orange hover:text-white transition-colors"
-              >+</button>
-            </div>
-
-            <button
-              onClick={handleAdd}
-              disabled={product.stock === 0}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold transition-all ${
-                added ? 'bg-green-500 text-white' : product.stock === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'btn-primary'
-              }`}
-            >
-              <ShoppingCart size={18} />
-              {added ? 'Added!' : t('addToCart')}
-            </button>
-          </div>
+          {/* Qty + Add to cart (client component) */}
+          <ProductAddToCart
+            productId={product.id}
+            sellerId={seller.id}
+            title={product.title}
+            price={product.price}
+            stock={product.stock}
+            image={image}
+            sellerName={seller.store_name}
+          />
 
           {/* Payment & Delivery info */}
           <div className="bg-brand-cream rounded-xl p-4 space-y-3">
@@ -166,13 +144,13 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               <div>
                 <p className="text-xs font-semibold text-brand-navy mb-1">Payment</p>
                 <div className="flex flex-wrap gap-1.5">
-                  {product.paymentOptions.includes('prepaid') && (
+                  {product.payment_options.includes('prepaid') && (
                     <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-brand-cream-dark rounded-full text-xs font-medium text-brand-navy">
                       <CreditCard size={11} className="text-brand-orange" />
                       Prepaid
                     </span>
                   )}
-                  {product.paymentOptions.includes('cod') && (
+                  {product.payment_options.includes('cod') && (
                     <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-brand-cream-dark rounded-full text-xs font-medium text-brand-navy">
                       <Banknote size={11} className="text-brand-orange" />
                       Cash on Delivery
@@ -187,14 +165,14 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               <Truck size={16} className="text-brand-orange mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-xs font-semibold text-brand-navy mb-0.5">Delivery</p>
-                {product.deliveryFeeType === 'included' ? (
+                {product.delivery_fee_type === 'included' ? (
                   <p className="text-xs text-brand-navy/70">
                     <span className="font-semibold text-green-600">Free delivery</span> — included in price
                   </p>
                 ) : (
                   <p className="text-xs text-brand-navy/70">
                     <span className="font-semibold text-brand-navy">
-                      +{formatPrice(product.deliveryFee)}
+                      +{formatPrice(product.delivery_fee)}
                     </span>{' '}
                     delivery fee — added at checkout
                   </p>
@@ -225,12 +203,27 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       </div>
 
       {/* More from seller */}
-      <div>
-        <h2 className="text-xl font-bold text-brand-navy mb-5">{t('moreFromSeller')}</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {RELATED.map(p => <ProductCard key={p.id} {...p} />)}
+      {related && related.length > 0 && (
+        <div>
+          <h2 className="text-xl font-bold text-brand-navy mb-5">{t('moreFromSeller')}</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {related.map((p: any) => (
+              <ProductCard
+                key={p.id}
+                id={p.id}
+                title={p.title}
+                price={p.price}
+                images={p.images}
+                stock={p.stock}
+                category={p.category}
+                sellerName={p.seller_profiles?.store_name ?? ''}
+                sellerId={p.seller_profiles?.id ?? ''}
+                badgeFlag={p.seller_profiles?.community_badges?.flag_emoji ?? null}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

@@ -68,7 +68,20 @@ CREATE TABLE IF NOT EXISTS products (
   updated_at TIMESTAMPTZ DEFAULT now()
 );
 
--- Migration: add payment/delivery columns to existing products table
+-- ─────────────────────────────────────────────────────────────────────────────
+-- MIGRATION: Payment & Delivery columns (run in Supabase SQL editor)
+--
+-- If your `products` table already exists (created before this migration),
+-- run the following ALTER TABLE block in the Supabase SQL editor:
+--
+--   ALTER TABLE products
+--     ADD COLUMN IF NOT EXISTS payment_options TEXT[] DEFAULT '{prepaid}',
+--     ADD COLUMN IF NOT EXISTS delivery_fee_type TEXT NOT NULL DEFAULT 'buyer_pays',
+--     ADD COLUMN IF NOT EXISTS delivery_fee INTEGER NOT NULL DEFAULT 0;
+--
+-- The CREATE TABLE statement above already includes these columns for fresh
+-- installs, so this ALTER TABLE is only needed for existing deployments.
+-- ─────────────────────────────────────────────────────────────────────────────
 ALTER TABLE products
   ADD COLUMN IF NOT EXISTS payment_options TEXT[] DEFAULT '{prepaid}',
   ADD COLUMN IF NOT EXISTS delivery_fee_type TEXT NOT NULL DEFAULT 'buyer_pays',

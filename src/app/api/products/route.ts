@@ -38,10 +38,25 @@ export async function POST(request: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const body = await request.json();
-  const { title, description, price, category, stock, images } = body;
+  const { title, description, price, category, stock, images, payment_options, delivery_fee_type, delivery_fee } = body;
 
   if (!title || !price || !category) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+  }
+
+  // Validate payment_options: must be a non-empty array containing only 'cod' and/or 'prepaid'
+  const validPaymentOptions = ['cod', 'prepaid'];
+  if (
+    !Array.isArray(payment_options) ||
+    payment_options.length === 0 ||
+    payment_options.some((o: unknown) => !validPaymentOptions.includes(o as string))
+  ) {
+    return NextResponse.json({ error: 'Invalid payment_options' }, { status: 400 });
+  }
+
+  // Validate delivery_fee_type
+  if (!['included', 'buyer_pays'].includes(delivery_fee_type)) {
+    return NextResponse.json({ error: 'Invalid delivery_fee_type' }, { status: 400 });
   }
 
   // Get seller profile
@@ -56,7 +71,18 @@ export async function POST(request: NextRequest) {
 
   const { data, error } = await supabase
     .from('products')
-    .insert({ title, description, price, category, stock: stock ?? 0, images: images ?? [], seller_id: seller.id })
+    .insert({
+      title,
+      description,
+      price,
+      category,
+      stock: stock ?? 0,
+      images: images ?? [],
+      seller_id: seller.id,
+      payment_options: payment_options ?? ['prepaid'],
+      delivery_fee_type: delivery_fee_type ?? 'buyer_pays',
+      delivery_fee: delivery_fee ?? 0,
+    })
     .select()
     .single();
 
