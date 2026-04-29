@@ -4,6 +4,8 @@ export type OrderStatus = 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'c
 export type PaymentMethod = 'stripe' | 'paypay' | 'cod';
 export type UserRole = 'buyer' | 'seller' | 'admin';
 export type ProductCategory = 'food_grocery' | 'snacks' | 'cultural_items' | 'restaurant' | 'fashion' | 'beauty' | 'other';
+export type ProductPaymentOption = 'cod' | 'prepaid';
+export type DeliveryFeeType = 'included' | 'buyer_pays';
 
 export interface Database {
   public: {
@@ -71,6 +73,9 @@ export interface Database {
           images: string[];
           active: boolean;
           language: string;
+          payment_options: ProductPaymentOption[];
+          delivery_fee_type: DeliveryFeeType;
+          delivery_fee: number;
           created_at: string;
           updated_at: string;
         };

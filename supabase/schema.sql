@@ -58,9 +58,21 @@ CREATE TABLE IF NOT EXISTS products (
   images TEXT[] DEFAULT '{}',
   active BOOLEAN DEFAULT true,
   language TEXT DEFAULT 'en',
+  -- Payment & delivery options chosen by seller
+  payment_options TEXT[] DEFAULT '{prepaid}' CHECK (
+    payment_options <@ ARRAY['cod','prepaid']::TEXT[] AND array_length(payment_options, 1) > 0
+  ),
+  delivery_fee_type TEXT NOT NULL DEFAULT 'buyer_pays' CHECK (delivery_fee_type IN ('included', 'buyer_pays')),
+  delivery_fee INTEGER NOT NULL DEFAULT 0, -- in JPY; 0 when delivery_fee_type = 'included'
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );
+
+-- Migration: add payment/delivery columns to existing products table
+ALTER TABLE products
+  ADD COLUMN IF NOT EXISTS payment_options TEXT[] DEFAULT '{prepaid}',
+  ADD COLUMN IF NOT EXISTS delivery_fee_type TEXT NOT NULL DEFAULT 'buyer_pays',
+  ADD COLUMN IF NOT EXISTS delivery_fee INTEGER NOT NULL DEFAULT 0;
 
 -- Orders
 CREATE TABLE IF NOT EXISTS orders (

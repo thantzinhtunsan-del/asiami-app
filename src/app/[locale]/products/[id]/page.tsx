@@ -3,17 +3,21 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
-import { ShoppingCart, ChevronLeft, Star, Truck, Shield, Languages } from 'lucide-react';
+import { ShoppingCart, ChevronLeft, Star, Truck, Shield, Languages, Banknote, CreditCard } from 'lucide-react';
 import { useCartStore } from '@/store/cart';
 import { formatPrice } from '@/lib/utils';
 import CommunityBadge from '@/components/ui/CommunityBadge';
 import ProductCard from '@/components/product/ProductCard';
+import type { ProductPaymentOption, DeliveryFeeType } from '@/types/database';
 
 // Sample product data — in production fetched from Supabase
 const SAMPLE_PRODUCTS: Record<string, {
   id: string; title: string; price: number; description: string;
   images: string[]; sellerName: string; sellerId: string;
   badgeFlag: string; badgeName: string; stock: number; category: string;
+  paymentOptions: ProductPaymentOption[];
+  deliveryFeeType: DeliveryFeeType;
+  deliveryFee: number;
 }> = {
   'p1000000-0000-0000-0000-000000000001': {
     id: 'p1000000-0000-0000-0000-000000000001',
@@ -27,6 +31,9 @@ const SAMPLE_PRODUCTS: Record<string, {
     badgeName: 'Myanmar-owned',
     stock: 50,
     category: 'food_grocery',
+    paymentOptions: ['prepaid', 'cod'],
+    deliveryFeeType: 'buyer_pays',
+    deliveryFee: 500,
   },
 };
 
@@ -151,18 +158,62 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             </button>
           </div>
 
-          {/* Features */}
-          <div className="space-y-2">
-            {[
-              { icon: Truck, text: 'Fast shipping across Japan, 3–5 business days' },
-              { icon: Shield, text: 'Buyer protection — full refund if not as described' },
-              { icon: Languages, text: 'Multilingual support — ask seller questions in your language' },
-            ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-2.5 text-sm text-brand-navy/60">
-                <Icon size={15} className="text-brand-orange flex-shrink-0" />
-                <span>{text}</span>
+          {/* Payment & Delivery info */}
+          <div className="bg-brand-cream rounded-xl p-4 space-y-3">
+            {/* Payment methods */}
+            <div className="flex items-start gap-3">
+              <CreditCard size={16} className="text-brand-orange mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs font-semibold text-brand-navy mb-1">Payment</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {product.paymentOptions.includes('prepaid') && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-brand-cream-dark rounded-full text-xs font-medium text-brand-navy">
+                      <CreditCard size={11} className="text-brand-orange" />
+                      Prepaid
+                    </span>
+                  )}
+                  {product.paymentOptions.includes('cod') && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-brand-cream-dark rounded-full text-xs font-medium text-brand-navy">
+                      <Banknote size={11} className="text-brand-orange" />
+                      Cash on Delivery
+                    </span>
+                  )}
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Delivery fee */}
+            <div className="flex items-start gap-3">
+              <Truck size={16} className="text-brand-orange mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs font-semibold text-brand-navy mb-0.5">Delivery</p>
+                {product.deliveryFeeType === 'included' ? (
+                  <p className="text-xs text-brand-navy/70">
+                    <span className="font-semibold text-green-600">Free delivery</span> — included in price
+                  </p>
+                ) : (
+                  <p className="text-xs text-brand-navy/70">
+                    <span className="font-semibold text-brand-navy">
+                      +{formatPrice(product.deliveryFee)}
+                    </span>{' '}
+                    delivery fee — added at checkout
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Platform guarantees */}
+            <div className="pt-2 border-t border-brand-cream-dark space-y-1.5">
+              {[
+                { icon: Shield, text: 'Buyer protection — full refund if not as described' },
+                { icon: Languages, text: 'Multilingual support — ask seller in your language' },
+              ].map(({ icon: Icon, text }) => (
+                <div key={text} className="flex items-center gap-2 text-xs text-brand-navy/55">
+                  <Icon size={13} className="text-brand-orange flex-shrink-0" />
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
