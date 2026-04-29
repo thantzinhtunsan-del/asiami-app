@@ -24,8 +24,7 @@
     "stripe": "^22.1.0",
     "tailwind-merge": "^3.5.0",
     "zod": "^4.3.6",
-    "zustand": "^5.0.12",
-    "pg": "^8.13.0"
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -35,7 +34,6 @@
     "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "@types/pg": "^8.11.0"
+    "typescript": "^5"
   }
 }
